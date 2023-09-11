@@ -13,7 +13,6 @@ body {
     width: 800px;
     height: 800px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
 }
 
 #container-grid > .grid-element {
