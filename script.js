@@ -1,18 +1,30 @@
-// Grid size default
-const DEFAULT_SIZE = 16
+const DEFAULT_SIZE = 16;
+const DEFAULT_COLOR = '#000000';
 
-let currentSize = DEFAULT_SIZE
+let currentSize = DEFAULT_SIZE;
+let currentColor = DEFAULT_COLOR;
 
 function setCurrentSize(newSize) {
     currentSize = newSize;
 }
 
-const container = document.getElementById('container-grid');
+function setCurrentColor(newColor) {
+    currentColor = newColor;
+}
+
+const colorPicker = document.getElementById('colorPicker');
 const sizeValue = document.getElementById('sizeValue');
 const sizeSlider = document.getElementById('sizeSlider');
+const container = document.getElementById('container-grid');
 
-sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value);
-sizeSlider.onchange = (e) => changeSize(e.target.value);
+colorPicker.oninput = (e) => setCurrentColor(e.target.value); // change color with color picker
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value); // change size value to show current size in html
+sizeSlider.onchange = (e) => changeSize(e.target.value); // chage size of the grid
+
+// I evaluate whether the mouse button is pressed or not.
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
 
 // Update the grid size with the slider input
 function changeSize(value) {
@@ -42,11 +54,14 @@ function generateGrid(size) {
     for (let i = 0; i < size * size ; i++) {
         const div = document.createElement("div");
         div.classList.add("grid-element");
-        div.addEventListener("mouseover", function(){
-            div.style.backgroundColor = 'red';
-        });
+        div.addEventListener('mouseover', changeColor);
         container.appendChild(div);
     }
+}
+
+function changeColor(e) {
+    if (!mouseDown) return
+    e.target.style.backgroundColor = currentColor
 }
 
 // Generate the default grid when the page is loaded
