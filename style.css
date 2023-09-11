@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, 
+body {
+    height: 100%;
+}
+  
+#container-grid {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#container-grid > .grid-element {
+    border: 1px solid #000000;
+}
