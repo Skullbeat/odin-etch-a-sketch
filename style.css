@@ -60,6 +60,12 @@ button {
     width: 100%;
 }
 
+button.active {
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #000000;
+}
+
 button,
 input[type='color'] {
   transition: transform 0.1s ease-in-out;
@@ -68,11 +74,18 @@ input[type='color'] {
 button:hover,
 input[type='color']:hover {
   transform: scale(1.05);
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #000000;
+  cursor: pointer;
 }
 
 input[type='color']:active {
   transition: transform 0.05s ease-in-out;
   transform: scale(1);
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #000000;
 }
 
 input[type='color'] {
