@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +11,84 @@ html,
 body {
     height: 100%;
     background-color: #000000;
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Raleway Dots', cursive;
+    color: #FFFFFF;
+    font-size: 90px;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.color-setting,
+.size-setting {
+    text-align: center;
+}
+
+.color-setting p,
+.size-setting p {
+    margin-bottom: .5rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px dotted #FFFFFF;
+    width: 100%;
+}
+
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
+input[type='color']:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  display: block;
+  margin: 0 auto .5rem;
+  width: 80px;
+  height: 80px;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
 }
   
 #container-grid {
